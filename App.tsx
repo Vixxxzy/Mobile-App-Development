@@ -1,11 +1,19 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TextInput,
+} from 'react-native';
 
 const App = () => {
   return (
     //JSX
     <ScrollView showsVerticalScrollIndicator={false}>
       <Text style={styles.title}>Hello React Native</Text>
+      <TextInput placeholder="Masukan Email" style={styles.input} />
       <Image
         style={styles.image1}
         source={require('./assets/programmer.jpeg')}
@@ -28,6 +36,14 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  input: {
+    borderWidth: 1,
+    borderColor: 'black',
+    margin: 10,
+    padding: 10,
+    borderRadius: 10,
+    fontSize: 18,
+  },
   image1: {
     height: 150,
     width: 150,
