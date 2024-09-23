@@ -12,7 +12,7 @@ const SignIn = () => {
       <Input label="Password" placeholder="Masukan password anda" />
       <Input label="Address" placeholder="Masukan alamat anda" />
       <Button label="Sign In" />
-      <Button label="Register" />
+      <Button label="Register" color="green" />
     </View>
   );
 };
