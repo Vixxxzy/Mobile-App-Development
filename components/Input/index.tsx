@@ -1,11 +1,16 @@
 import {StyleSheet, Text, TextInput} from 'react-native';
 import React from 'react';
 
-const Input = ({label, placeholder}) => {
+const Input = ({label, placeholder, onChangeText, ...rest}) => {
   return (
     <>
       <Text style={styles.label}>{label}</Text>
-      <TextInput style={styles.input} placeholder={placeholder} />
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+        onChangeText={onChangeText}
+        {...rest}
+      />
     </>
   );
 };
