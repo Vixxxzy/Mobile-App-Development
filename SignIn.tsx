@@ -36,7 +36,7 @@ const SignIn = () => {
         label="Password"
         placeholder="Masukan password anda"
         onChangeText={handlePassword}
-        secureTextEntry
+        secureTextEntry={true}
       />
       {/* <Input label="Address" placeholder="Masukan alamat anda" /> */}
       <Button label="Sign In" onPress={handleClick} />
