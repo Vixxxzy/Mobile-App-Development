@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import Title from './components/Title';
 import axios from 'axios';
@@ -14,8 +14,13 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Title title="Home" />
-      {users.map(item => {
-        return <Text> {item.first_name}</Text>;
+      {users.map(({id, first_name}) => {
+        return (
+          <>
+            <Text style={styles.text}> {`${id} ${first_name}`}</Text>
+            <Image />
+          </>
+        );
       })}
     </View>
   );
@@ -26,5 +31,8 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+  },
+  text: {
+    fontSize: 22,
   },
 });
