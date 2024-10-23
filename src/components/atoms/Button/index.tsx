@@ -11,7 +11,7 @@ const Button = ({
 }) => {
   if (type === 'icon-only') {
     return (
-      <TouchableOpacity activeOpacity={0.5}>
+      <TouchableOpacity activeOpacity={0.5} style={styles.backButton}>
         {icon === 'arrow-back' && <ArrowBack />}
       </TouchableOpacity>
     );
@@ -38,4 +38,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: textColor,
   }),
+  backButton: {
+    width: 50,
+    height: 50,
+  },
 });
