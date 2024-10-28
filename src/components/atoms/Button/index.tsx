@@ -8,16 +8,23 @@ const Button = ({
   textColor = '#020202',
   type,
   icon,
+  onPress,
 }) => {
   if (type === 'icon-only') {
     return (
-      <TouchableOpacity activeOpacity={0.5} style={styles.backButton}>
+      <TouchableOpacity
+        activeOpacity={0.5}
+        style={styles.backButton}
+        onPress={onPress}>
         {icon === 'arrow-back' && <ArrowBack />}
       </TouchableOpacity>
     );
   }
   return (
-    <TouchableOpacity style={styles.button(color)} activeOpacity={0.5}>
+    <TouchableOpacity
+      style={styles.button(color)}
+      activeOpacity={0.5}
+      onPress={onPress}>
       <Text style={styles.text(textColor)}>{text}</Text>
     </TouchableOpacity>
   );
