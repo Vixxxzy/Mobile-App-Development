@@ -3,7 +3,8 @@ import {StyleSheet, Text, View, Image} from 'react-native';
 import {Button, Gap} from '../../components/atoms';
 import {DummyPhoto} from '../../assets/icon';
 
-const Home = ({navigation}) => {
+const Home = ({navigation, route}) => {
+  const {uid} = route.params;
   return (
     <View style={styles.pageContainer}>
       <View style={styles.headerContainer}>
