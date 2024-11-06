@@ -46,6 +46,7 @@ const SignUp = ({navigation}) => {
         // Signed up
         const user = userCredential.user;
         console.log(user);
+        navigation.navigate('SignIn');
       })
       .catch(error => {
         showMessage({
