@@ -3,10 +3,14 @@ import {StyleSheet, Text, View, Image} from 'react-native';
 import {Button, Gap} from '../../components/atoms';
 import {DummyPhoto} from '../../assets/icon';
 import {getDatabase, ref, onValue} from 'firebase/database';
+import Rupiah from '../../utils/Rupiah';
 
 const Home = ({navigation, route}) => {
   const {uid} = route.params;
   const [fullName, setFullName] = useState('');
+  const [cashInBank, setCashInBank] = useState(0);
+  const [cashInHand, setCashInHand] = useState(0);
+  const [total, setTotal] = useState(0);
   const [photo, setPhoto] = useState(DummyPhoto);
 
   useEffect(() => {
@@ -16,8 +20,12 @@ const Home = ({navigation, route}) => {
       const data = snapshot.val();
       setPhoto({uri: data.photo});
       setFullName(data.fullName);
+      setCashInBank(data.balance.cashInBank);
+      setCashInHand(data.balance.cashInHand);
+      setTotal(data.balance.total);
     });
   }, []);
+
   return (
     <View style={styles.pageContainer}>
       <View style={styles.headerContainer}>
@@ -31,28 +39,34 @@ const Home = ({navigation, route}) => {
       </View>
       <View style={styles.contentWrapper}>
         <Text style={styles.subTitle}>Your Balance</Text>
-        <Text style={styles.totalBalance}>Rp. 10.000.000</Text>
+        <Text style={styles.totalBalance}>{Rupiah(total)}</Text>
         <View style={styles.line} />
         <View style={styles.subTotalWrapper}>
           <Text style={styles.subTotal}>Cash On Hand</Text>
-          <Text style={styles.subTotal}>Rp. 4.000.000</Text>
+          <Text style={styles.subTotal}>{Rupiah(cashInHand)}</Text>
         </View>
         <View style={styles.subTotalWrapper}>
           <Text style={styles.subTotal}>Cash On Bank</Text>
-          <Text style={styles.subTotal}>Rp. 6.000.000</Text>
+          <Text style={styles.subTotal}>{Rupiah(cashInBank)}</Text>
         </View>
         <Text style={styles.subTitle}>Add Transaction</Text>
         <Button
           text="Cash On Hand"
           onPress={() =>
-            navigation.navigate('AddTransaction', {title: 'Cash On Hand'})
+            navigation.navigate('AddTransaction', {
+              title: 'Cash On Hand',
+              uid: uid,
+            })
           }
         />
         <Gap height={10} />
         <Button
           text="Cash On Bank"
           onPress={() =>
-            navigation.navigate('AddTransaction', {title: 'Cash On Bank'})
+            navigation.navigate('AddTransaction', {
+              title: 'Cash On Bank',
+              uid: uid,
+            })
           }
         />
       </View>
