@@ -7,13 +7,13 @@ import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyBjRn1TFetU3ote_XtyEp2E-t6nI3wah2M',
-  authDomain: 'moneytracker2024-2.firebaseapp.com',
-  projectId: 'moneytracker2024-2',
-  storageBucket: 'moneytracker2024-2.firebasestorage.app',
-  messagingSenderId: '907390355275',
-  appId: '1:907390355275:web:6ff1dd18bee09aee340ace',
-  databaseURL: 'https://moneytracker2024-2-default-rtdb.firebaseio.com/',
+  apiKey: 'AIzaSyCXxlDYRQTmf5aQQeqOsmElZ0pw5AffEFQ',
+  authDomain: 'money-tracker-vic-14.firebaseapp.com',
+  databaseURL: 'https://money-tracker-vic-14-default-rtdb.firebaseio.com',
+  projectId: 'money-tracker-vic-14',
+  storageBucket: 'money-tracker-vic-14.firebasestorage.app',
+  messagingSenderId: '975459362202',
+  appId: '1:975459362202:web:08a932b504a94e660c4623',
 };
 
 // Initialize Firebase

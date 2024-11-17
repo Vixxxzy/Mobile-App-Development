@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "emulator": "emulator -avd Pixel_2_XL_API_34"
+    "emulator": "emulator -avd Pixel_3_XL_API_35"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.24.0",
